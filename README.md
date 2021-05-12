@@ -1,2 +1,2 @@
-# Numerical-Bilinearization
+# Numerical Bilinearization
 Numerical Bilinearization
