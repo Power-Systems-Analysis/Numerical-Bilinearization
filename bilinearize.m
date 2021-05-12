@@ -12,7 +12,7 @@ function [A, N, B, C] = bilinearize(Fx, Bx)
     [A, A0] = matrix_diff(Fx);
     % Building the constant C.
     %     | A0 |
-    % С = | 0  |
+    % C = | 0  |
     %     | 0  |
     C = zeros(n + n^2 + n^3, 1);
     C(1:n, 1) = A0;
@@ -199,7 +199,7 @@ function [A, A0] = matrix_diff(Fx)
     % A31 = (A1 * I + I * A1) * I + I * I * A1
     % A31 = A21 * I + I * I * A1
     A31 = kron(A21, I) + kron(II, A1);
-    % Собираем матриу A.
+    % Building the matrix A.
     %    | A1  A2   A3  |
     % A =| A20 A21  A22 |
     %    | 0   A30  A31 |
