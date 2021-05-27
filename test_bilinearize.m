@@ -1,20 +1,15 @@
-d11 = -1;
-d12 = -1;
-d21 = 1;
-
-f1 = @(x) d11 * x(1) + d12 * sin(asin(0.5) + x(2));
-f2 = @(x) d21 * x(1);
+f1 = @(x) 1 - x(1) - cos(x(1)) - sin(x(2));
+f2 = @(x) -x(2);
 f = {f1; f2};
 
-b11 = 1;
-b1 = @(x) b11;
-b2 = @(x) 0;
+b1 = @(x) 0;
+b2 = @(x) 1;
 b = {b1; b2};
 
 dt = 1e-4;
 t = 0:dt:20.0;
 t_size = size(t, 2);
-u = 0.5 - 0.5 * cos(t);
+u = sin(t);
 
 tic;
 [A, N, B, C] = bilinearize(f, b);
